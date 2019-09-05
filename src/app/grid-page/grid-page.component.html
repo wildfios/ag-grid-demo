@@ -1,0 +1,13 @@
+<div (window:resize)="onResize($event)" 
+     class="grid-containier">
+  <ag-grid-angular #agGrid 
+                   style="width: 100%; height: 95%;"
+                   class="ag-theme-balham"
+                   [gridOptions]="gridOptions"
+                   [frameworkComponents]="frameworkComponents"
+                   [statusBar]="statusBar"
+                   [getRowHeight]="getRowHeight"
+                   (gridReady)="onGridReady($event)"
+                  >
+  </ag-grid-angular>
+</div>
