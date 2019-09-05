@@ -1,0 +1,17 @@
+<div class="ag-header-group-cell-label" [ngSwitch]="checkState" (click)="onChangeState()">
+  <span class="ag-icon ag-icon-checkbox-unchecked" 
+        unselectable="on"
+        *ngSwitchCase="0">
+  </span>
+  <span class="ag-icon ag-icon-checkbox-checked"
+        unselectable="on"
+        *ngSwitchCase="1">
+  </span>
+  <span class="ag-icon ag-icon-checkbox-indeterminate"
+        unselectable="on"
+        *ngSwitchCase="2">
+  </span>
+  <div class="customHeaderLabel">{{this.params.displayName}}</div>
+</div>
+
+

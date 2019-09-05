@@ -4,6 +4,7 @@ import { GridOptions, GridApi, ColumnApi } from 'ag-grid-community';
 
 import { StatusBarCountersComponent } from './status-bar-counters/status-bar-counters.component';
 import { CheckControlLogicComponent } from './check-control-logic/check-control-logic.component';
+import { CustomHeaderComponent } from './custom-header/custom-header.component';
 import { DatatService } from '../services/data.service'
 
 @Component({
@@ -20,7 +21,8 @@ export class GridPageComponent {
   private dataObj = [];
   private columnDefs = [
     {
-      headerCheckboxSelection: true,
+      //headerCheckboxSelection: true,
+      headerComponent: "customHeaderComponent",
       headerName: 'Select/Unselect All',
       field: 'checkbox',
       id: 'checkboxes',
@@ -70,7 +72,8 @@ export class GridPageComponent {
     };
     this.frameworkComponents = { 
         statusBarComponent: StatusBarCountersComponent, 
-        checkControlLogicComponent: CheckControlLogicComponent
+        checkControlLogicComponent: CheckControlLogicComponent,
+        customHeaderComponent: CustomHeaderComponent
       };
     this.statusBar = {
       statusPanels: [

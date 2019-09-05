@@ -11,13 +11,15 @@ import { StatusBarCountersComponent } from './grid-page/status-bar-counters/stat
 import { CheckControlLogicComponent } from './grid-page/check-control-logic/check-control-logic.component';
 
 import { HttpErrorInterceptor } from './http-error.interceptor';
+import { CustomHeaderComponent } from './grid-page/custom-header/custom-header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GridPageComponent,
     StatusBarCountersComponent,
-    CheckControlLogicComponent
+    CheckControlLogicComponent,
+    CustomHeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import { HttpErrorInterceptor } from './http-error.interceptor';
     AppRoutingModule,
     AgGridModule.withComponents([
       StatusBarCountersComponent,
-      CheckControlLogicComponent
+      CheckControlLogicComponent,
+      CustomHeaderComponent
     ])
   ],
   providers: [
