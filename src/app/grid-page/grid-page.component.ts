@@ -111,4 +111,35 @@ export class GridPageComponent {
   onResize(event) {
     this.gridApi.sizeColumnsToFit();
   }
+
+  getContextMenuItems(params) {
+    var result = [];
+    if (params.column.colId == 'url') {
+      result = [
+        {
+            name: 'Open in new tab',
+            action: function() {
+              window.open(params.value, "_blank");
+            },
+            icon: '<img style="width: 15px; height: 15px" src="assets/YouTube-icon.png"/>'
+        },
+        'copyWithHeaders',
+        'copy',
+        'paste',
+        'separator',
+        'export'
+      ];
+    } else if (params.column.colId == 'checkbox') {
+      return [];
+    } else {
+      result = [
+        'copyWithHeaders',
+        'copy',
+        'paste',
+        'separator',
+        'export'
+      ];
+    }
+    return result;
+  }
 }
